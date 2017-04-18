@@ -14,11 +14,47 @@ pod install
 3) Add some vector data (e.g. http://www.naturalearthdata.com)
 4) Save the project
 5) Go to settings -> Export to MBTiles
-6) Install mb-util
+6) Install mb-util (https://github.com/mapbox/mbutil)
 7) Convert MBTiles to PBF Files
 ```
-./mb-util --image_format=pbf countries.mbtiles countries
+mb-util --image_format=pbf countries.mbtiles countries
 gzip -d -r -S .pbf *
 find . -type f -exec mv '{}' '{}'.pbf \;
 ```
 8) Zip the folder
+
+## Structure of the style.json file
+The Tiles-URL corresponds to your local server running on port 8080. The example zip file contains a top level folder countries. If you choose another zip structure or port, adjust the style.json.
+```
+"sources": {
+        "composite": {
+            "type": "vector",
+            "tiles": ["http://localhost:8080/countries/{z}/{x}/{y}.pbf"]
+        }
+    }
+```
+
+The layers object is responsible for the styling of the map. The id is unique for every element. Source corresponds to the name in your sources object and the layer corresponds to the name of the layer in your source mbtiles file. For possible styles, use the MapBox Online Editor (http://www.mapbox.com) and download the style file.
+```
+    "layers": [
+               {
+               "id": "background",
+               "type": "background",
+               "paint": {
+               "background-color": "hsl(190, 67%, 47%)"
+               }
+               },
+               {
+               "id": "countries",
+               "type": "fill",
+               "source": "composite",
+               "source-layer": "countries",
+               "layout": {
+               "visibility": "visible"
+               },
+               "paint": {
+               "fill-color": "hsl(0, 0%, 85%)",
+               "fill-outline-color": "#F8E81C"
+               }
+               }]
+```
