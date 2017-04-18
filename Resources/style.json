@@ -1,0 +1,57 @@
+{
+    "version": 8,
+    "sources": {
+        "composite": {
+            "type": "vector",
+            "tiles": ["http://localhost:8080/countries/{z}/{x}/{y}.pbf"]
+        }
+    },
+    "layers": [
+               {
+               "id": "background",
+               "type": "background",
+               "paint": {
+               "background-color": "hsl(190, 67%, 47%)"
+               }
+               },
+               {
+               "id": "countries",
+               "type": "fill",
+               "source": "composite",
+               "source-layer": "countries",
+               "layout": {
+               "visibility": "visible"
+               },
+               "paint": {
+               "fill-color": "hsl(0, 0%, 85%)",
+               "fill-outline-color": "#F8E81C"
+               }
+               },
+               {
+               "id": "countries-border",
+               "type": "line",
+               "source": "composite",
+               "source-layer": "countries",
+               "layout": {
+               "visibility": "visible"
+               },
+               "paint": {
+               "line-color": "#000000",
+               "line-width": 1.2
+               }
+               },
+               {
+               "id": "countries-deu",
+               "type": "fill",
+               "source": "composite",
+               "source-layer": "countries",
+               "filter": ["in","ADM0_A3","DEU"],
+               "layout": {
+               "visibility": "visible"
+               },
+               "paint": {
+               "fill-color": "#BD0FE1"
+               }
+               }
+               ]
+}

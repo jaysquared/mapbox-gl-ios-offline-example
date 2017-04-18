@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+@import Mapbox;
+
 
 @interface ViewController ()
-
+@property MGLMapView *mapView;
 @end
 
 @implementation ViewController
@@ -17,6 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *stylePath = [[NSBundle mainBundle] pathForResource:@"style" ofType:@"json"];
+    NSURL *styleUrl = [NSURL fileURLWithPath:stylePath];
+    
+    self.mapView = [[MGLMapView alloc] initWithFrame:self.view.bounds styleURL:styleUrl];
+    [self.view addSubview:self.mapView];
+
 }
 
 

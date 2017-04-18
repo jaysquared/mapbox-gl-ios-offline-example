@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "GCDWebServer.h"
+#import "GCDWebServerDataResponse.h"
+#import "Objective-Zip.h"
 
 @interface AppDelegate ()
-
+@property GCDWebServer *webServer;
 @end
 
 @implementation AppDelegate
@@ -17,6 +20,35 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.webServer = [[GCDWebServer alloc] init];
+    
+    // Add a handler to respond to PBF GET requests
+    [self.webServer addDefaultHandlerForMethod:@"GET"
+                                  requestClass:[GCDWebServerRequest class]
+                                  processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+                                      NSString *requestPath = [request.path substringFromIndex:1];
+                                      
+                                      NSString *zipPath = [[NSBundle mainBundle] pathForResource:@"map" ofType:@"zip"];
+                                      
+                                      OZZipFile *unzipFile= [[OZZipFile alloc] initWithFileName:zipPath
+                                                                                           mode:OZZipFileModeUnzip];
+                                      
+                                      [unzipFile locateFileInZip:requestPath];
+                                      
+                                      OZFileInZipInfo *info= [unzipFile getCurrentFileInZipInfo];
+                                      
+                                      // Expand the file in memory
+                                      OZZipReadStream *read= [unzipFile readCurrentFileInZip];
+                                      NSMutableData *data= [[NSMutableData alloc] initWithLength:info.length];
+                                      [read readDataWithBuffer:data];
+                                      [read finishedReading];
+                                      
+                                      return [GCDWebServerDataResponse responseWithData:data contentType:@"application/x-protobuf"];
+                                  }];
+    
+    // Start server on port 8080
+    [self.webServer startWithPort:8080 bonjourName:nil];
+    
     return YES;
 }
 

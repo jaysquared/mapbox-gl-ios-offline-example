@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7F4B847EE472D2E7383431 /* libPods-OfflineMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B547B9E9A3DB3CECC351445 /* libPods-OfflineMaps.a */; };
 		6F78494C1EA5ADC100F99DD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F78494B1EA5ADC100F99DD3 /* main.m */; };
 		6F78494F1EA5ADC100F99DD3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F78494E1EA5ADC100F99DD3 /* AppDelegate.m */; };
 		6F7849521EA5ADC100F99DD3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7849511EA5ADC100F99DD3 /* ViewController.m */; };
 		6F7849551EA5ADC100F99DD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F7849531EA5ADC100F99DD3 /* Main.storyboard */; };
 		6F7849571EA5ADC100F99DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7849561EA5ADC100F99DD3 /* Assets.xcassets */; };
 		6F78495A1EA5ADC100F99DD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F7849581EA5ADC100F99DD3 /* LaunchScreen.storyboard */; };
+		6F7849641EA5AE4200F99DD3 /* map.zip in Resources */ = {isa = PBXBuildFile; fileRef = 6F7849621EA5AE4200F99DD3 /* map.zip */; };
+		6F7849651EA5AE4200F99DD3 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F7849631EA5AE4200F99DD3 /* style.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		6F7849561EA5ADC100F99DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F7849591EA5ADC100F99DD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F78495B1EA5ADC100F99DD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F7849621EA5AE4200F99DD3 /* map.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = map.zip; sourceTree = "<group>"; };
+		6F7849631EA5AE4200F99DD3 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		7B547B9E9A3DB3CECC351445 /* libPods-OfflineMaps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OfflineMaps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7527A98C08EEEAE119AB085 /* Pods-OfflineMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfflineMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfflineMaps/Pods-OfflineMaps.release.xcconfig"; sourceTree = "<group>"; };
+		F1AF73D3BDACE570565CBBC3 /* Pods-OfflineMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfflineMaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfflineMaps/Pods-OfflineMaps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7F4B847EE472D2E7383431 /* libPods-OfflineMaps.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +51,11 @@
 		6F78493E1EA5ADC100F99DD3 = {
 			isa = PBXGroup;
 			children = (
+				6F7849611EA5AE4200F99DD3 /* Resources */,
 				6F7849491EA5ADC100F99DD3 /* OfflineMaps */,
 				6F7849481EA5ADC100F99DD3 /* Products */,
+				733F14780B2BDE432499755E /* Pods */,
+				B7079DDB7014EC7B05BADF34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +91,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6F7849611EA5AE4200F99DD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F7849621EA5AE4200F99DD3 /* map.zip */,
+				6F7849631EA5AE4200F99DD3 /* style.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		733F14780B2BDE432499755E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1AF73D3BDACE570565CBBC3 /* Pods-OfflineMaps.debug.xcconfig */,
+				D7527A98C08EEEAE119AB085 /* Pods-OfflineMaps.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7079DDB7014EC7B05BADF34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B547B9E9A3DB3CECC351445 /* libPods-OfflineMaps.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F78495E1EA5ADC100F99DD3 /* Build configuration list for PBXNativeTarget "OfflineMaps" */;
 			buildPhases = (
+				E2AFE0460AE95F2F09B2083D /* [CP] Check Pods Manifest.lock */,
 				6F7849431EA5ADC100F99DD3 /* Sources */,
 				6F7849441EA5ADC100F99DD3 /* Frameworks */,
 				6F7849451EA5ADC100F99DD3 /* Resources */,
+				4C995B5DAF45B4BA8098F3C0 /* [CP] Embed Pods Frameworks */,
+				442460633FEA7192D6D47A45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,11 +180,61 @@
 			files = (
 				6F78495A1EA5ADC100F99DD3 /* LaunchScreen.storyboard in Resources */,
 				6F7849571EA5ADC100F99DD3 /* Assets.xcassets in Resources */,
+				6F7849641EA5AE4200F99DD3 /* map.zip in Resources */,
+				6F7849651EA5AE4200F99DD3 /* style.json in Resources */,
 				6F7849551EA5ADC100F99DD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		442460633FEA7192D6D47A45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfflineMaps/Pods-OfflineMaps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C995B5DAF45B4BA8098F3C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfflineMaps/Pods-OfflineMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2AFE0460AE95F2F09B2083D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F7849431EA5ADC100F99DD3 /* Sources */ = {
@@ -270,6 +361,7 @@
 		};
 		6F78495F1EA5ADC100F99DD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1AF73D3BDACE570565CBBC3 /* Pods-OfflineMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OfflineMaps/Info.plist;
@@ -281,6 +373,7 @@
 		};
 		6F7849601EA5ADC100F99DD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7527A98C08EEEAE119AB085 /* Pods-OfflineMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OfflineMaps/Info.plist;
@@ -309,6 +402,7 @@
 				6F7849601EA5ADC100F99DD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
