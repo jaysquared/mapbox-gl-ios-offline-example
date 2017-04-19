@@ -15,7 +15,7 @@ pod install
 4) Save the project
 5) Go to settings -> Export to MBTiles
 6) Install mb-util (https://github.com/mapbox/mbutil)
-7) Convert MBTiles to PBF Files
+7) Convert MBTiles to PBF Files (More info https://github.com/klokantech/vector-tiles-sample)
 ```
 mb-util --image_format=pbf countries.mbtiles countries
 gzip -d -r -S .pbf *
