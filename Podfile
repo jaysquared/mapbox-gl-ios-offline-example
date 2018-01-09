@@ -8,5 +8,5 @@ target 'OfflineMaps' do
   # Pods for OfflineMaps
 pod 'Mapbox-iOS-SDK', '~> 3.5'
 pod 'GCDWebServer', '~> 3.3'
-pod 'objective-zip', '~> 1.0.3'
+pod 'objective-zip', '1.0.3'
 end
